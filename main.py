@@ -19,11 +19,7 @@ def ruta_suma():
 
 @app.route("/division_piso")
 def ruta_division_piso():
-    numero1=request.args.get("numero1",type=float)
-    numero2=request.args.get("numero2",type=float)
-    if numero1 is None or numero2 is None:
-        return "Faltan datos"
-    return f"El resultado de la division piso es {division_piso(numero1,numero2)}"
+    return render_template("division_piso.html")
 
 if __name__ == "__main__":
     server = Server(app.wsgi_app)
